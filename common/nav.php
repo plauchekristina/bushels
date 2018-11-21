@@ -34,15 +34,22 @@
                     <li>
                         <a href="../order-form.php">Order Form</a>
                     </li>
-                    <li>
-                        <a href="#">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQs</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
+                    <?php 
+                    
+                                        if (isset($_SESSION['client'])){
+                                        if (!isset($_SESSION['coop']['coop_name'])){ echo "";
+                                        }else{ echo "<li>
+                                            <a href='/order-form.php'>Order Form</a>
+                                        </li>
+                                        <li>
+                                            <a href='/dashboard.php'>Dashboard</a>
+                                        </li>";}
+                                   
+                    
+                                    }
+                                       
+                                        if (isset($_SESSION['client'])){echo "<li><a href='logout.php'>Logout</a></li>";}
+                                        else{echo"<li><a href='/login.php'>Login</a></li>";}?>
                 </ul>
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group input-group">
@@ -56,8 +63,8 @@
                 </form>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">
-                            <span class="glyphicon glyphicon-user"></span> My Account</a>
+                        <a href="/account.php">
+                            <span class="glyphicon glyphicon-user"></span><?php if(isset($_SESSION['client'])){echo "Welcome, ".$_SESSION['client']['first_name'];}?> My Account</a>
                     </li>
                 </ul>
             </div>

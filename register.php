@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?php include('/common/nav.php');?> 
+<?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 
 <!---  ####### Body content begins ####### -->
 

@@ -2,7 +2,7 @@
 $account_id=$_SESSION['client']['account_id'];
    
 ?>
-<?php include('/common/nav.php');?> 
+<?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
 
     <div class="container text-center">

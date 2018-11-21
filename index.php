@@ -19,7 +19,9 @@ $conn = null;
         <div class="row">
             <div class="col-sm-12 panel panel-default text-left">
                 <div class="panel-body">
-                    <p> Hi</p>
+                <?php if (!isset($_SESSION['client'])){
+                        echo "<h3><a href='/project/register.php'>Register Now</a> or <a href='/project/login.php'>Login</a> to get started. </h3>
+                        ";}?>
                 </div>
 
             </div>

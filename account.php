@@ -2,7 +2,7 @@
 if (!isset($_SESSION['client'])){
     header('Location:login.php');
 }?>
-<?php include('/common/nav.php');?> 
+<?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
 <div class="jumbotron">
         <div class="container text-center">
