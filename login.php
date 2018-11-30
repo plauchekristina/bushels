@@ -4,15 +4,6 @@
 <!---  ####### Body content begins ####### -->
 
 
-
-   
-
-            <!-- Left column -->
-           
-
-            <!-- Center column -->
-
-
             <div class="col-sm-12">
 
                 <div class="row">

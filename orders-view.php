@@ -38,39 +38,7 @@ $account_id=$_SESSION['client']['account_id'];
 
    
 
-            <!-- Left column -->
-            <div class="col-sm-3 well">
-                <div class="well">
-                    <h2>
-                        <?php echo "Welcome, ".$_SESSION['client']['first_name'];?>
-</h2>
-                    
-<br><p> 
-                    <?php 
-                    echo "<strong>Today is:</strong> ".date("m/d/Y");?></p>
-                </div>
-<?php  echo "<br/>Id: ".$_SESSION['client']['account_id'];?>
-
-            </div>
-
-            <!-- Center column -->
-            <div class="col-sm-9">
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default text-left well">
-                            <div class="panel-body">
-                            <p>Past orders:</p>
-                           
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-<!--end center column-->
+           
 </div> 
 </div>        
        

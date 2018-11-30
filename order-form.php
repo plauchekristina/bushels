@@ -172,5 +172,6 @@ if (!isset($_SESSION['client'])){
 
        
  <script src ="/scripts/functions.js"></script>
+ <script src ="/scripts/order-form.js"></script>
  <script src ="/scripts/order-quantities.js"></script>
     <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/footer.php');?> 

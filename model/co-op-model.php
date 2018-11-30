@@ -4,7 +4,7 @@ session_start();
  * Library of Functions
  */
 require('../connection.php');
-var_dump($_POST);
+//var_dump($_POST);
 
 
     $coop_user_id=htmlspecialchars($_POST ['account_id']);
@@ -37,7 +37,7 @@ var_dump($_POST);
           $stmt->execute();
       }
          catch (Exception $e) {
-          echo $e;
+          //echo $e;
       }
 
       ///get coop data as array
@@ -58,7 +58,7 @@ try {
     $_SESSION['coop'] = $coop_data; 
 }
    catch (Exception $e) {
-    echo $e;
+    //echo $e;
 }
       header('Location: ../dashboard.php'); 
       die();

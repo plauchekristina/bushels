@@ -4,10 +4,11 @@ session_start();
  * Library of Functions
  */
 require('../connection.php');
-var_dump($_POST);
-var_dump($_SESSION);
+//var_dump($_POST);
+//var_dump($_SESSION);
 
 $account_id= $_SESSION['client']['account_id'];
+    $coop_id=htmlspecialchars($_POST ['coop_id']);
     $coop_user_id=htmlspecialchars($_POST ['account_id']);
     $coop_name= htmlspecialchars($_POST ['coop_name']);
     $contact_name= htmlspecialchars($_POST ['contact_name']);
@@ -46,7 +47,7 @@ $account_id= $_SESSION['client']['account_id'];
         
       }
          catch (Exception $e) {
-          echo $e;
+          //echo $e;
       }
       
       ///get coop data as array
@@ -67,7 +68,7 @@ try {
     $_SESSION['coop'] = $coop_data; 
 }
    catch (Exception $e) {
-    echo $e;
+    //echo $e;
 }
       header('Location: ../account.php'); 
      die();

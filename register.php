@@ -45,7 +45,7 @@
                         <div class="panel panel-default text-left well">
                             <div class="panel-body">
                           <!--- Form Begins-->
-                          <form action="model/accounts-model.php" method="POST">
+                          <form action="/model/accounts-model.php" method="POST">
            <h2>Register</h2>
         <div class="fail-message"><p>All fields are required</p></div>
         <div>

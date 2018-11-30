@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Bushels Co-op Service</title>
+    <title>Bushels Group Buying</title>
    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,15 +31,13 @@
                     <li class="active">
                         <a href="../index.php">Home</a>
                     </li>
-                    <li>
-                        <a href="../order-form.php">Order Form</a>
-                    </li>
+                   
                     <?php 
                     
                                         if (isset($_SESSION['client'])){
                                         if (!isset($_SESSION['coop']['coop_name'])){ echo "";
                                         }else{ echo "<li>
-                                            <a href='/order-form.php'>Order Form</a>
+                                            <a href='/order-form.php'>Order Calculator</a>
                                         </li>
                                         <li>
                                             <a href='/dashboard.php'>Dashboard</a>

@@ -3,8 +3,8 @@
  * Library of Functions
  */
 require('../connection.php');
-var_dump($_POST);
-var_dump($_SESSION);
+//var_dump($_POST);
+//var_dump($_SESSION);
 
 $account_id=htmlspecialchars($_POST ['account_id']);
 
@@ -25,7 +25,7 @@ try {
     $coop_id= $_SESSION['coop']['coop_id']; 
 }
    catch (Exception $e) {
-    echo $e;
+    //echo $e;
 }
 
 
@@ -73,7 +73,7 @@ $item_order_cost=htmlspecialchars($_POST ['item-total']);
          $last_id = $db->lastInsertId();
       }
          catch (Exception $e) {
-          echo $e;
+          //echo $e;
       }
 
 
@@ -101,7 +101,7 @@ $item_order_cost=htmlspecialchars($_POST ['item-total']);
      
   }
      catch (Exception $e) {
-      echo $e;
+     // echo $e;
   }
 
  header('Location:../dashboard.php');

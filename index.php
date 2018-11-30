@@ -20,7 +20,7 @@ $conn = null;
             <div class="col-sm-12 panel panel-default text-left">
                 <div class="panel-body">
                 <?php if (!isset($_SESSION['client'])){
-                        echo "<h3><a href='/register.php'>Register Now</a> or <a href='/login.php'>Login</a> to get started. </h3>
+                        echo "<h3><a href='register.php'>Register Now</a> or <a href='login.php'>Login</a> to get started. </h3>
                         ";}?>
                 </div>
 

@@ -1,5 +1,5 @@
 <?php session_start();?>
-<?php include('../project/common/nav.php');?> 
+<?php include('../common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
 <div class="jumbotron">
         <div class="container text-center">
@@ -18,7 +18,7 @@
                         Some people want full portions and others want half portions. Others may want double or triple portions.
                         You need to figure how many boxes of apples to purchase for the group based on the # of portions requested</p>
                         <?php if (!isset($_SESSION['client'])){
-                        echo "<h3><a href='/project/register.php'>Register Now</a> or <a href='/project/login.php'>Login</a> to get started. </h3>
+                        echo "<h3><a href='/register.php'>Register Now</a> or <a href='/login.php'>Login</a> to get started. </h3>
                         ";}?>
                    
             </div>

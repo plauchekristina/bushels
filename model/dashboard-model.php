@@ -4,7 +4,7 @@ session_start();
  * Library of Functions
  */
 require('../connection.php');
-var_dump($_POST);
+//var_dump($_POST);
 //session start
 //$userSession = $_POST["username"];
 
@@ -30,7 +30,7 @@ var_dump($_POST);
         $_SESSION['user_id']=$userId;
     }
        catch (Exception $e) {
-        echo $e;
+       // echo $e;
     }
 header('Location: ../dashboard.php');
 die(); 

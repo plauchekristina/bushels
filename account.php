@@ -56,6 +56,7 @@ if (!isset($_SESSION['client'])){
 <?php if (!isset($_SESSION['coop']['coop_name'])){ echo "<h3>Please <a href='co-op.php'>create your co-op</a></h3>";}?>
                             <ul>
                                 <li>Co-op Name: <?php echo $_SESSION['coop']['coop_name'];?></li>
+                                <li>Co-op Id: <?php echo $_SESSION['coop']['coop_id'];?></li>
                                 <li>Contact Name: <?php echo $_SESSION['coop']['coop_contact_name'];?></li>
                                 <li>Contact Email: <?php echo $_SESSION['coop']['coop_contact_email'];?> </li>
                                 <li>Full Budget: <?php echo $_SESSION['coop']['coop_full_budget'];?></li>

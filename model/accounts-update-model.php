@@ -4,9 +4,9 @@ session_start();
  * Library of Functions
  */
 require('../connection.php');
-var_dump($_POST);
-echo "SESSION DUMP STARTS HERE:";
-var_dump($_SESSION);
+//var_dump($_POST);
+//echo "SESSION DUMP STARTS HERE:";
+//var_dump($_SESSION);
 //session start
 //$userSession = $_POST["username"];
 
@@ -44,7 +44,7 @@ $account_id= $_SESSION['client']['account_id'];
         $stmt->execute();
     }
        catch (Exception $e) {
-        echo $e;
+        //echo $e;
     }
 
 
@@ -65,12 +65,8 @@ $account_id= $_SESSION['client']['account_id'];
         
       }
          catch (Exception $e) {
-          echo $e;
+         // echo $e;
       }
    header('Location:../account.php');
 die ();
-    
-   
-   
-    
 ?>

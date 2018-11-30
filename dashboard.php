@@ -15,8 +15,9 @@ if (!isset($_SESSION['client'])){
             <div class="col-sm-12 panel panel-default text-left">
                 <div  class="panel-body">
                 <h2>
-                        <?php echo "Welcome, ".$_SESSION['client']['first_name'];?>
-</h2>
+                        <?php echo "Welcome, ".$_SESSION['client']['first_name'];?></h2>
+                        <p> <?php if (isset($_SESSION['message'])){echo $_SESSION['message'];} ?></p>
+
 <p> 
                     <?php 
                     echo "<strong>Today is:</strong> ".date("m/d/Y");?></p>        
