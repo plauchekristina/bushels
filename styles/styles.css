@@ -104,6 +104,10 @@ body {
     margin-right: auto;
 }
 
+.tall {
+    height: 420px;
+}
+
 .home {
     height: 630px;
 }

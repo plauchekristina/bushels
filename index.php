@@ -32,9 +32,10 @@
         </div>
         <div class="card-body">
             <h3 class="card-title">Full Bushels</h3>
+            <div class="tall">
             <div class="card-img text-center "><figure><img src="/images/green-full.png" class="mx-auto img-fluid tiny"></figure></div>
             <h3 class="card-title">Partial Bushels</h3>
-            <div class="card-img text-center"><figure><img src="/images/green-half.png" class="mx-auto img-fluid tiny"></figure></div>
+            <div class="card-img text-center"><figure><img src="/images/green-half.png" class="mx-auto img-fluid tiny"></figure></div></div>
             <a href="/login.php" class="btn btn-primary">Login</a>
         </div>
 
@@ -45,7 +46,7 @@
         </div>
         <div class="card-body">
             <h3 class="card-title">Calculate Quantities</h3>
-            <div class="card-img text-center"><figure><img src="/images/calculator.png" class="mx-auto img-fluid"></figure></div>
+            <div class="card-img text-center tall"><figure><img src="/images/calculator.png" class="mx-auto img-fluid"></figure></div>
             <a href="/order-form.php" class="btn btn-primary">Start New Order</a>
         </div>
 
@@ -56,7 +57,7 @@
         </div>
         <div class="card-body">
             <h3 class="card-title">Never overspend again</h3>
-            <div class="card-img text-center"><figure><img src="/images/plus.png" class="mx-auto img-fluid"></figure></div>
+            <div class="card-img text-center tall"><figure><img src="/images/plus.png" class="mx-auto img-fluid"></figure></div>
             <a href="/account.php" class="btn btn-primary">Set Budget</a>
         </div>
 
