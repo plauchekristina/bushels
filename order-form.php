@@ -7,54 +7,36 @@ if (!isset($_SESSION['client'])){
 
 <!---  ####### Body content begins ####### -->
 <div class="box">
-            <div onload="defaultDate()">
+           
                 <div class="card text-left">
-                    <div class="card-header green">
+                    <div class="card-header full green">
                         <form action="model/orders-model.php" method="post">
                             <input name="account_id" id="account_id" type="hidden" value="<?php echo $_SESSION['client']['account_id'];?>">
-                            <h2> Order Form</h2>
-                            <div class="overlay">
-                                <div>
-                                    <label># Full Bushels
-
-                                    </label>
-                                    <div id="fullCount-error" class="error"></div>
-                                </div>
-                                <div>
-                                    <input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="full-count" id="full-count"
-                                        min="0" step="1">
+                            <h2> <?php echo $_SESSION['coop']['coop_name'];?> Order Form</h2>
+                            <div id="overlay" onchange="dismissOverlay()">
+                                <h2 id="overlay-text"></h2>
+                                <p><strong># Full Bushels </strong><input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="full-count" id="full-count"
+                                        min="0" step="1" >
                                     <!-- Budget data from co-op info. Used for calculations, but hidden from viewer.-->
-                                    <input type="hidden" name="full-budget" id="full-budget" value="<?php echo $_SESSION['coop']['coop_full_budget'];?>">
-                                </div>
-                                <div>
-                                    <label># Half Bushels </label>
-                                </div>
-                                <div>
-                                    <input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="half-count" id="half-count"
-                                        size="10" onchange="orderQuantities()" min="0" step="1">
+                                    <input type="hidden" name="full-budget" id="full-budget" value="<?php echo $_SESSION['coop']['coop_full_budget'];?>"></p>
+                                <p><strong># Partial Bushels </strong><input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="half-count" id="half-count"
+                                        size="10" onchange="orderQuantities()" min="0" step="1" >
 
                                     <!-- Budget data from co-op info. Used for calculations, but hidden from viewer.-->
-                                    <input type="hidden" name="half-budget" id="half-budget" size="10" value="<?php echo $_SESSION['coop']['coop_half_budget'];?>">
-
-                                </div>
+                                    <input type="hidden" name="half-budget" id="half-budget" size="10" value="<?php echo $_SESSION['coop']['coop_half_budget'];?>"></p>
+                                    <h2 class="btn-primary" id="overlay-click"></h2>
+                               
+                              
                             </div>
+                           
                             <h4>Purchasing Budget:
                                 <span id="target-total"></span>
-                            </h4>
-                           
+                            </h4> 
                     </div>
                     <div class="card-body">
 
-                        <h3>
-                            <?php echo $_SESSION['coop']['coop_name'];?> Order</h3>
-                        <div>
-                            <label>Date:
-                               
-                            </label>
-                        </div>
-                        <div>
-                            <input type="date" name="order-date" required id="order-date" >
-                        </div>
+                        
+                       
 
                         <!-- Items section -->
                         <div class="card">
@@ -71,7 +53,7 @@ if (!isset($_SESSION['client'])){
                         </div>
 
                         <div>
-                            <label>Per Half Bushel:
+                            <label>Per Partial Bushel:
 
                             </label>
                         </div>
@@ -119,19 +101,20 @@ if (!isset($_SESSION['client'])){
                         <div>
                             <input type="number" name="item-price" required id="item-price" placeholder="$0.00" onchange="orderQuantities()" min="0" step=".5">
                         </div>
-</div>
-</div>
-                        <hr/>
-                        <div>
-                            <h3>Quantity: <span id="item-quantity-display" onchange="orderQuantities()"></span></h3>
+                        <p><strong>Quantity:</strong> <span id="item-quantity-display" onchange="orderQuantities()"></span></p>
                             <input type="hidden" name="item-quantity" id="item-quantity" onchange="orderQuantities()">
-                        </div>
+
 
                        
-                        <div>
-                            <h3>Item Total: <span id="item-total-display" onchange="orderQuantities()"></span></h3>
+                      
+                            <p><strong>Item Total:</strong> <span id="item-total-display" onchange="orderQuantities()"></span></p>
                             <input type="hidden" name="item-total" id="item-total" onchange="orderQuantities()">
-                        </div>
+</div>
+</div>
+                        
+                    
+                           
+                     
                         
                         <hr/>
                         <div class="card-footer">
@@ -147,7 +130,10 @@ if (!isset($_SESSION['client'])){
                         </div>
         
 
-                        <p>To place your order through your sales person at the Farmers Market, give them a call.
+                        <p><strong>Pickup Date:</strong>
+                           
+                        
+                            <input type="date" name="order-date" required id="order-date" >
                         </p>
                         <div>
 
@@ -158,12 +144,12 @@ if (!isset($_SESSION['client'])){
                         </form>
                     </div>
                 </div>
-            </div>
+           
         </div>
 
 
        
  <script src ="/scripts/functions.js"></script>
- 
+ <script src ="/scripts/order-form.js"></script>
  <script src ="/scripts/order-quantities.js"></script>
     <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/footer.php');?> 

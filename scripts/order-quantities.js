@@ -1,18 +1,4 @@
 
-function defaultDate() {
-    document.getElementById('order-date').value = dateFormat();
-}
-
-function dateFormat() {
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let yr = date.getFullYear();
-
-    if (day < 10)
-        return yr + '-' + month + '-0' + day;
-    return yr + '-' + month + '-' + day;
-}
 function orderQuantities() {
     //get the user inputs from order form
     var fullCount = parseInt(document.getElementById('full-count').value);
@@ -50,7 +36,7 @@ function orderQuantities() {
         document.getElementById('grand-total-display').innerHTML = "$ " + grandTotal.toFixed(2);
     }
     //make sure the user doesn't see NaN when nothing has been calculated yet
-    if (targetTotal >= 0) {
+    if (targetTotal > 0) {
         document.getElementById('target-total').innerHTML = "$" + targetTotal.toFixed(2);
     }
     //make sure the user doesn't see NaN when nothing has been calculated yet

@@ -79,6 +79,10 @@ body {
     padding: .5%;
 }
 
+.cream {
+    color: #f0e9ce
+}
+
 .navbar-inverse .navbar-nav>li>a {
     color: #432c28;
     font-size: 1.2em;
@@ -89,8 +93,39 @@ body {
     border: 1px solid rgba(67, 44, 40, .5);
     padding: 0;
     margin: .5%;
-    max-width: 32%;
+    width: 32%;
     height: 100%;
+}
+
+.tiny {
+    max-width: 150px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home {
+    height: 630px;
+}
+
+figure {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+figure>img {
+    max-width: 100%;
+    height: auto;
+}
+
+.bushel {
+    width: 100px;
+    height: auto;
+}
+
+.jumbotron {
+    background-color: white;
 }
 
 .card.double {
