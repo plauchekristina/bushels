@@ -7,10 +7,6 @@ require('../connection.php');
 //var_dump($_POST);
 //session start
 //$userSession = $_POST["username"];
-
-
-
-
   $first_name= htmlspecialchars($_POST ['first_name']);
   $last_name= htmlspecialchars($_POST ['last_name']);
   $email= htmlspecialchars($_POST ['email']);
@@ -18,7 +14,6 @@ require('../connection.php');
   $user_password= htmlspecialchars($_POST ['user_password']); 
   $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
   
-
     //$db = dbConnect();
     // The SQL statement
     $sql = 'INSERT INTO account (first_name, last_name, email, username, user_password)
@@ -40,9 +35,8 @@ require('../connection.php');
        catch (Exception $e) {
         //echo $e;
     }
-
    header('Location:../login.php');
-   die ();
+   exit("Unable to connect to the site");
  
    
    

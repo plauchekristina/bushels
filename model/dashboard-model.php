@@ -33,7 +33,9 @@ require('../connection.php');
        // echo $e;
     }
 header('Location: ../dashboard.php');
-die(); 
+exit("Unable to connect to the site");
+
+
     
     
 ?>

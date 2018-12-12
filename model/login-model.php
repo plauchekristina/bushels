@@ -91,13 +91,13 @@ if (password_verify($user_password, $session_password)){
    $message = "Login successful.";
    $_SESSION['message']=$message;
    header('Location:../dashboard.php');
-   die();
+   exit("Unable to connect to the site");
  
 } else {
     $message = "<p class='alert'>Your username and password didn't match. Please try again.</p>";
     $_SESSION['message']=$message;
     header('Location:../login.php');
-    die();
+    exit("Unable to connect to the site");
 }
 
   

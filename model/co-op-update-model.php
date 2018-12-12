@@ -71,6 +71,6 @@ try {
     //echo $e;
 }
       header('Location: ../account.php'); 
-     die();
+      exit("Unable to connect to the site");
 ?>
 

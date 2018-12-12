@@ -4,80 +4,76 @@ if (!isset($_SESSION['client'])){
 }?>
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
-<div class="jumbotron">
-        <div class="container text-center">
-            <h1>My Account</h1>
+<div class="container">
+<div class="row">
+
+    <div class="card double text-left">
+        <div class="card-header green">
+            <h2>My Account</h2>
+        </div>
+        <div class="card-body">
+            <!--inner content begin-->
+
+
+            <h4>First Name:
+                <?php echo $_SESSION['client']['first_name'];?>
+            </h4>
+            <h4>Last Name:
+                <?php echo $_SESSION['client']['last_name'];?>
+            </h4>
+            <h4>Email:
+                <?php echo $_SESSION['client']['email'];?> </h4>
+            <h4>Username:
+                <?php echo $_SESSION['client']['username'];?>
+            </h4>
+            <h4>User Id:
+                <?php  echo $_SESSION['client']['account_id'];?>
+            </h4>
+            
+
+            <a href="account-update.php" class='btn btn-primary'>Edit</a>
+
+        </div>
+
+    </div>
+
+    <div class="card double text-left">
+        <div class="card-header green">
+            <h2>My Co-op</h2>
+        </div>
+        <div class="card-body">
+            <?php if (!isset($_SESSION[ 'coop'][ 'coop_name'])){ echo
+                "<h3>Please <a href='co-op.php'class='btn btn-primary'>Create Your Co-op</a></h3>";}?>
+
+                <h4>Co-op Name:
+                    <?php echo $_SESSION['coop']['coop_name'];?>
+                </h4>
+                <h4>Co-op Id:
+                    <?php echo $_SESSION['coop']['coop_id'];?>
+                </h4>
+                <h4>Contact Name:
+                    <?php echo $_SESSION['coop']['coop_contact_name'];?>
+                </h4>
+                <h4>Contact Email:
+                    <?php echo $_SESSION['coop']['coop_contact_email'];?> </h4>
+                <h4>Full Budget: $
+                    <?php echo $_SESSION['coop']['coop_full_budget'];?>
+                </h4>
+                <h4>Half Budget: $
+                    <?php echo $_SESSION['coop']['coop_half_budget'];?>
+                </h4>
+
+
+
+
+                <?php if (isset($_SESSION['coop']['coop_name'])){echo "<a href='co-op-update.php' class='btn btn-primary'>Edit</a>";}?>
+                <!--inner content end-->
         </div>
     </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-12 panel panel-default text-left">
-                <div  class="panel-body">
-                    <p></p>
-                   
-            </div>
-            </div>
+</div>
+</div>
 
-   
-
-            <!-- Left column -->
-            <div class="col-sm-3 well">
-                <div class="well">
-                    <h2>
-                        <a href="#">Date</a>
-</h2>
-                    
-<br><p> 
-                    <?php 
-                    echo "<strong>Today is:</strong> ".date("m/d/Y");?></p>
-                </div>
-
-
-            </div>
-
-            <!-- Center column -->
-            <div class="col-sm-9">
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default text-left well">
-                            <div class="panel-body">
-                            <h2>Account Info:</h2>
-                            <ul>
-                                <li>First Name: <?php echo $_SESSION['client']['first_name'];?></li>
-                                <li>Last Name: <?php echo $_SESSION['client']['last_name'];?></li>
-                                <li>Email: <?php echo $_SESSION['client']['email'];?> </li>
-                                <li>Username: <?php echo $_SESSION['client']['username'];?></li>
-                                <li>User Id: <?php  echo $_SESSION['client']['account_id'];?></li>
-                            </ul>
-<p><a href="account-update.php">Edit</a></p>
-<hr/>
-<h2>Co-Op Info:</h2>
-<?php if (!isset($_SESSION['coop']['coop_name'])){ echo "<h3>Please <a href='co-op.php'>create your co-op</a></h3>";}?>
-                            <ul>
-                                <li>Co-op Name: <?php echo $_SESSION['coop']['coop_name'];?></li>
-                                <li>Co-op Id: <?php echo $_SESSION['coop']['coop_id'];?></li>
-                                <li>Contact Name: <?php echo $_SESSION['coop']['coop_contact_name'];?></li>
-                                <li>Contact Email: <?php echo $_SESSION['coop']['coop_contact_email'];?> </li>
-                                <li>Full Budget: <?php echo $_SESSION['coop']['coop_full_budget'];?></li>
-                                <li>Half Budget: <?php echo $_SESSION['coop']['coop_half_budget'];?></li>
-                            </ul>
-                           
-                            
-                            
-                            <?php if (isset($_SESSION['coop']['coop_name'])){echo "<p><a href='co-op-update.php'>Edit</a></p>";}?>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-<!--end center column-->
-</div> 
-</div> 
+<!--footer begins-->
     
        
 <script src ="/scripts/functions.js"></script>

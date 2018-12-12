@@ -22,14 +22,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="../images/bushel-logo-nav.svg">
+                <a class="navbar-brand" href="/index.php">
+                    <img src="../images/bushels-logo_main.svg">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="../index.php">Home</a>
+                    <li >
+                        <a href="/index.php">Home</a>
                     </li>
                    
                     <?php 

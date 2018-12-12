@@ -4,47 +4,16 @@ if (!isset($_SESSION['client'])){
 }?>
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
-<div class="jumbotron">
-        <div class="container text-center">
-            <h1>Co-op Profile</h1>
-        </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-12 panel panel-default text-left">
-                <div  class="panel-body">
-                    <p></p>
-                   
-            </div>
-            </div>
-
-   
-
-            <!-- Left column -->
-            <div class="col-sm-3 well">
-                <div class="well">
-                    <h2>
-                        <a href="#">Date</a>
-</h2>
-                    
-<br><p> 
-                    <?php 
-                    echo "<strong>Today is:</strong> ".date("m/d/Y");?></p>
+<!--Form begins-->
+<div class="box">
+        <div>
+            <div class="card text-left">
+                <div class="card-header green">
+                    <h2>Co-op Update</h2>
                 </div>
-
-
-            </div>
-
-            <!-- Center column -->
-            <div class="col-sm-9">
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default text-left well">
-                            <div class="panel-body">
-                            <h2>Co-Op Details</h2>
-                
+                <div class="card-body">
                             <form action="model/co-op-update-model.php" method="POST">
+                            <p>Updating your budget amounts will only affect future orders. Past order data will remain the same.</p>
 
         <div class="fail-message"><p>All fields are required</p></div>
        
@@ -84,23 +53,18 @@ if (!isset($_SESSION['client'])){
         </div>
         <div>
           
-            <label>&nbsp;</label>
-            <input type="submit" name="submit" id="regbtn" value="Save" class="register">
+           
+            <input type="submit" name="submit" id="regbtn" value="Save" class="register" class="btn btn-primary">
            
         </div>
                
             </form>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-<!--end center column-->
-</div> 
-</div>        
+            </div>
+        </div>
+    </div>               
+       
        
 <script src ="/scripts/functions.js"></script>
     <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/footer.php');?> 

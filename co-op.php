@@ -4,48 +4,18 @@ if (!isset($_SESSION['client'])){
 }?>
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
-<div class="jumbotron">
-        <div class="container text-center">
-            <h1>Co-op Profile</h1>
-        </div>
-    </div>
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-12 panel panel-default text-left">
-                <div  class="panel-body">
-                    <p></p>
-                   
-            </div>
-            </div>
 
-   
 
-            <!-- Left column -->
-            <div class="col-sm-3 well">
-                <div class="well">
-                    <h2>
-                        <a href="#">Date</a>
-</h2>
-                    
-<br><p> 
-                    <?php 
-                    echo "<strong>Today is:</strong> ".date("m/d/Y");?></p>
+<!--Form begins-->
+<div class="box">
+        <div>
+            <div class="card text-left">
+                <div class="card-header green">
+                    <h2>Co-op Profile</h2>
                 </div>
-
-
-            </div>
-
-            <!-- Center column -->
-            <div class="col-sm-9">
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="panel panel-default text-left well">
-                            <div class="panel-body">
-                            <h2>Co-Op Details</h2>
-                
-                            <form action="model/co-op-model.php" method="POST">
-
+                <div class="card-body">
+                <form action="model/co-op-model.php" method="POST">
+<p> Please enter a name and contact information for your co-op.  The name and email can be different from your account profile.  </p>
         <div class="fail-message"><p>All fields are required</p></div>
        
    
@@ -61,14 +31,14 @@ if (!isset($_SESSION['client'])){
                 <label for="contact_name">Contact Name</label>
         </div>
         <div>
-                <input name="contact_name" id="contact_name" type="text"  required>
+                <input name="contact_name" id="contact_name" type="text" value="<?php echo $_SESSION['client']['first_name'] ?>"  required>
         </div>
       
         <div>
                 <label for="contact_email">Contact Email</label>
         </div>
         <div>
-                <input type="email" name="contact_email" id="contact_email" required >
+                <input type="email" name="contact_email" id="contact_email" value="<?php echo $_SESSION['client']['email'];?>"required >
         </div>
         <div>
         <label for="full_portion_budget">Full Portion Budget</label>
@@ -83,25 +53,22 @@ if (!isset($_SESSION['client'])){
                 <input name="half_portion_budget" id="full_portion_budget" type="number" required>
         </div>
         <div>
-            <!--<input type ="hidden" name="account_id" <"<"?php if (isset($account_id)) {
-                echo "value='$account_id'";} ?> >"-->
-            <label>&nbsp;</label>
-            <input type="submit" name="submit" id="regbtn" value="Save" class="register">
+           
+          
+            <input type="submit" name="submit" id="regbtn" value="Save" class="btn btn-primary">
            
         </div>
                
-            </form>
-
-                            </div>
-                        </div>
-                    </div>
+</form>
+                    
+                        
                 </div>
-
-
             </div>
-<!--end center column-->
-</div> 
-</div>        
+        </div>
+    </div>
+
+
+    <!-- form ends -->
        
 <script src ="/scripts/functions.js"></script>
     <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/footer.php');?> 

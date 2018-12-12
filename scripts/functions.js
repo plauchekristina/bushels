@@ -27,3 +27,16 @@ function newQuote() {
     var randomNumber = Math.floor(Math.random() * (quotes.length));
     document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
 }
+//using these to change the background color for input onfocus
+function targetInput(x) {
+    x.style.backgroundColor = "lightblue";
+}
+function targetOutput(x) {
+    x.style.backgroundColor = "white";
+}
+
+$(document).ready(function () {
+    // get current URL path and assign 'active' class
+    var pathname = window.location.pathname;
+    $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
+})

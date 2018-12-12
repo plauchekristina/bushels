@@ -1,4 +1,4 @@
-function orderTarget() {
+/* function orderTarget() {
     // Get the order counts and budgets per portion from user.
     var fullCount = parseFloat(document.getElementById('full-count').value);
     var fullBudget = parseFloat(document.getElementById('full-budget').value);
@@ -11,4 +11,4 @@ function orderTarget() {
 
     // Display the target order total to the user.
     document.getElementById('target-total').innerHTML = "$" + targetTotal.toFixed(2);
-}
+} */

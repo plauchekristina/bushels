@@ -1,6 +1,6 @@
     <footer class="footer">
         <div class="container text-center">
-            <p>&copy; 2018 Bushels Co-op Service</p>
+            <p>&copy; 2018 Bushels World Produce | a Co-op Service</p>
         </div>
     </footer>
 
