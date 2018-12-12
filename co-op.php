@@ -41,16 +41,16 @@ if (!isset($_SESSION['client'])){
                 <input type="email" name="contact_email" id="contact_email" value="<?php echo $_SESSION['client']['email'];?>"required >
         </div>
         <div>
-        <label for="full_portion_budget">Full Portion Budget</label>
+        <label for="full_portion_budget">Full Bushel Budget</label>
                 </div>
                 <div>
-                <input name="full_portion_budget" id="full_portion_budget" type="number" required>
+                <input name="full_portion_budget" id="full_portion_budget" type="number" min="0" step="1" required>
         </div>
         <div>
-        <label for="halfportion_budget">Half Portion Budget</label>
+        <label for="halfportion_budget">Partial Bushel Budget</label>
                 </div>
                 <div>
-                <input name="half_portion_budget" id="full_portion_budget" type="number" required>
+                <input name="half_portion_budget" id="full_portion_budget" type="number" min="0" step="1" required>
         </div>
         <div>
            

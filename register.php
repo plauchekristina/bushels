@@ -2,7 +2,11 @@
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 
 <!---  ####### Body content begins ####### -->
-
+<?php
+if (isset($message)) {
+ echo $message;
+}
+?>
 <!--Form begins-->
 <div class="box">
         <div>

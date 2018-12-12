@@ -49,15 +49,13 @@ body {
     border-color: rgba(67, 44, 40, .5);
 }
 
-}
-
-.btn-primary {
+.btn-primary, .btn.btn-primary, input.btn.btn-primary, input.btn-primary.active:focus, input.btn-primary.active:hover {
     background-color: #432c28;
     color: #f0e9ce;
     border-color: #432c28;
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary:active:hover, .btn-primary:active:focus {
     background-color: #f0e9ce;
     color: #432c28;
     border-color: rgba(67, 44, 40, .5);

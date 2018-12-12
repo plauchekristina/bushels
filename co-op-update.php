@@ -40,16 +40,16 @@ if (!isset($_SESSION['client'])){
                 <input type="email" name="contact_email" id="contact_email" required value = "<?php echo $_SESSION['coop']['coop_contact_email'];?>">
         </div>
         <div>
-        <label for="full_portion_budget">Full Portion Budget</label>
+        <label for="full_portion_budget">Full Bushel Budget</label>
                 </div>
                 <div>
-                <input name="full_portion_budget" id="full_portion_budget" type="number" required value = "<?php echo $_SESSION['coop']['coop_full_budget'];?>">
+                <input name="full_portion_budget" id="full_portion_budget" type="number" min="0" step="1" required value = "<?php echo $_SESSION['coop']['coop_full_budget'];?>">
         </div>
         <div>
-        <label for="halfportion_budget">Half Portion Budget</label>
+        <label for="halfportion_budget">Partial Bushel Budget</label>
                 </div>
                 <div>
-                <input name="half_portion_budget" id="full_portion_budget" type="number" required value = "<?php echo $_SESSION['coop']['coop_half_budget'];?>">
+                <input name="half_portion_budget" id="full_portion_budget" type="number" min="0" step="1" required value = "<?php echo $_SESSION['coop']['coop_half_budget'];?>">
         </div>
         <div>
           

@@ -2,6 +2,11 @@
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 
 <!---  ####### Body content begins ####### -->
+<?php
+if (isset($message)) {
+ echo $message;
+}
+?>
 <div class="box">
     <div>
 <div class="card text-left">

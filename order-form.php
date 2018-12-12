@@ -147,11 +147,11 @@ if (!isset($_SESSION['client'])){
                         </div>
         
 
-                        <p>To place your order through your sales person at the Farmers Market, make sure to call them.
+                        <p>To place your order through your sales person at the Farmers Market, give them a call.
                         </p>
                         <div>
 
-                            <input type="submit" name="submit" id="regbtn" value="Submit" class="btn btn-primary">
+                            <input type="submit" name="submit"  value="Submit" class="btn btn-primary">
                             </form>
                         </div>
 

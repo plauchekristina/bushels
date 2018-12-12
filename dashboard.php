@@ -16,7 +16,8 @@ if (!isset($_SESSION['client'])){
                         <?php if (!isset($_SESSION['coop']['coop_name'])){ echo "<h3>Please <a href='co-op.php'>create your co-op</a></h3>";}?>
                                 <p><b>Full Budget:</b> <?php echo "$".$_SESSION['coop']['coop_full_budget'];?></p>
                                 <p><b>Half Budget:</b> <?php echo "$".$_SESSION['coop']['coop_half_budget'];?></p>
-                                                  
+                               
+                 
                                <!--  <form action="order-form.php">
                                 <input type="submit" name="submit" id="regbtn" value="New Order" class="btn-primary">
                         </form> -->
@@ -56,7 +57,7 @@ if (!isset($_SESSION['client'])){
                     
                                 }
                               ?>
-
+                              
                             </div>
                         </div>
                     </div>

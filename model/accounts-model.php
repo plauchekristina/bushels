@@ -13,6 +13,26 @@ require('../connection.php');
   $username= htmlspecialchars($_POST ['username']);
   $user_password= htmlspecialchars($_POST ['user_password']); 
   $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
+
+ // Check for an existing email address
+function checkExistingEmail($email) {
+ $db = acmeConnect();
+ $sql = 'SELECT email FROM account WHERE email = :email';
+ $stmt = $db->prepare($sql);
+ $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+ $stmt->execute();
+ $matchEmail = $stmt->fetch(PDO::FETCH_NUM);
+ $stmt->closeCursor();
+ if(empty($matchEmail)){
+ return 0;
+ } else {
+  return 1;
+ }
+
+}
+
+
+
   
     //$db = dbConnect();
     // The SQL statement
