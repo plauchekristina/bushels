@@ -39,7 +39,7 @@ if (!isset($_SESSION['client'])){
                        
 
                         <!-- Items section -->
-                        <div class="card">
+                        <div class="card item">
                         <div class="card-header brown">
                         <h4 >Item</h4>
 </div><div class="card-body">

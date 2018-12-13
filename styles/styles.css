@@ -33,6 +33,14 @@ body {
     min-width: 50%;
 }
 
+.item {
+    width: 95%;
+}
+
+div.card.item {
+    width: 100%;
+}
+
 .navbar-inverse {
     background-color: #f0e9ce;
     color: #432c28;

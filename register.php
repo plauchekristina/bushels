@@ -9,7 +9,7 @@ if (isset($message)) {
 ?>
 <!--Form begins-->
 <div class="box">
-        <div>
+  
             <div class="card text-left">
                 <div class="card-header green">
                    <h2> Register</h2>
@@ -64,7 +64,7 @@ if (isset($message)) {
                     </form>
                 </div>
             </div>
-        </div>
+        
     </div>
 
 

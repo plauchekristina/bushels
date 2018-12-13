@@ -10,14 +10,8 @@
  
   <p class="lead">
   <?php if (!isset($_SESSION['client'])){
-                        echo "<div class='row'>
-                        
-                            <div class='panel panel-default col-sm-12 text-center'>
-                                <div class='panel-body'><h3><a href='register.php'class='btn red btn-lg'>Register Now</a></h3>
-                        </div>
-                        </div>
-                    
-                    </div>";}?>
+                        echo "
+                                <h3><a href='register.php'class='btn brown btn-lg'>Register Now</a></h3>";}?>
   </p>
 </div>
 
@@ -71,7 +65,7 @@
                         echo "<div class='row'>
                         
                             <div class='panel panel-default col-sm-12 text-center'>
-                                <div class='panel-body'><h3><a href='register.php'class='btn red btn-lg'>Register Now</a> or <a href='login.php'>Login</a> to get started. </h3>
+                                <div class='panel-body'><a href='register.php'class='btn red btn-lg'>Register Now</a> or <a href='login.php' class='btn green btn-lg'>Login</a> to get started. </h3>
                         </div>
                         </div>
                     

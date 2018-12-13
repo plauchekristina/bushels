@@ -8,7 +8,7 @@ if (isset($message)) {
 }
 ?>
 <div class="box">
-    <div>
+ 
 <div class="card text-left">
                 <div class="card-header green">
                 <h2>Login</h2>
@@ -40,7 +40,7 @@ if (isset($message)) {
                 </form>
             </div>
             </div>    
-            </div>
+  
             
                           <!--Form ends -->   
                             
