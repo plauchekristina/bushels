@@ -2,6 +2,7 @@
 $account_id=$_SESSION['client']['account_id'];
 if (!isset($_SESSION['client'])){
     header('Location:login.php');
+    include('controller/orders-controller.php');
 }?>
 <?php include($_SERVER["DOCUMENT_ROOT"] . '/common/nav.php');?> 
 <!---  ####### Body content begins ####### -->
@@ -53,8 +54,7 @@ if (!isset($_SESSION['client'])){
                                         } else {
                                             echo "<p>No orders could be found</p>";
                                         }
-                                     
-                    
+                   
                                 }
                               ?>
                               

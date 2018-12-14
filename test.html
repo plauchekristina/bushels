@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+
+<head>
+    <title>Bushels Co-op Service</title>
+    <html lang="en">
+
+    </html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-mobile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/bushels-logo_main.svg">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Order Form</a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> My Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!---  ####### Body content begins ####### -->
+
+    <div class="container">
+        <!-- 3 columns -->
+
+        <div class="row">
+
+            <div class="card text-left">
+                <div class="card-header red">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+
+            </div>
+            <div class="card text-left">
+                <div class="card-header brown ">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+
+            </div>
+            <div class="card text-left">
+                <div class="card-header green">
+                    Featured
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- Centered column -->
+        <div class="row">
+
+            <div class="panel panel-default col-sm-12 text-center">
+                <div class="panel-body">
+                    <a href="#" class="btn btn-primary btn-lg">Go somewhere</a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <!--Form begins-->
+
+
+
+    <!-- form ends -->
+    <div class="container">
+        <div class="row">
+
+            <div class="card double text-left">
+                <div class="card-header green">
+                    <h2>My Account</h2>
+                </div>
+                <div class="card-body">
+                    <!--inner content begin-->
+
+
+                    <h4>First Name:
+                        <?php echo $_SESSION['client']['first_name'];?>
+                    </h4>
+                    <h4>Last Name:
+                        <?php echo $_SESSION['client']['last_name'];?>
+                    </h4>
+                    <h4>Email:
+                        <?php echo $_SESSION['client']['email'];?> </h4>
+                    <h4>Username:
+                        <?php echo $_SESSION['client']['username'];?>
+                    </h4>
+                    <h4>User Id:
+                        <?php  echo $_SESSION['client']['account_id'];?>
+                    </h4>
+                    </ul>
+
+                    <a href="account-update.php" class='btn btn-primary'>Edit</a>
+
+                </div>
+
+            </div>
+
+            <div class="card double text-left">
+                <div class="card-header green">
+                    <h2>My Co-op</h2>
+                </div>
+                <div class="card-body">
+                    < <?php if (!isset($_SESSION[ 'coop'][ 'coop_name'])){ echo
+                        "<h3>Please <a href='co-op.php'class='btn btn-primary'>Create Your Co-op</a></h3>";}?>
+
+                        <h4>Co-op Name:
+                            <?php echo $_SESSION['coop']['coop_name'];?>
+                        </h4>
+                        <h4>Co-op Id:
+                            <?php echo $_SESSION['coop']['coop_id'];?>
+                        </h4>
+                        <h4>Contact Name:
+                            <?php echo $_SESSION['coop']['coop_contact_name'];?>
+                        </h4>
+                        <h4>Contact Email:
+                            <?php echo $_SESSION['coop']['coop_contact_email'];?> </h4>
+                        <h4>Full Budget:
+                            <?php echo $_SESSION['coop']['coop_full_budget'];?>
+                        </h4>
+                        <h4>Half Budget:
+                            <?php echo $_SESSION['coop']['coop_half_budget'];?>
+                        </h4>
+
+
+
+
+                        <?php if (isset($_SESSION['coop']['coop_name'])){echo "<a href='co-op-update.php' class='btn btn-primary'>Edit</a>";}?>
+                        <!--inner content end-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer begins-->
+    <script src="/scripts/functions.js"></script>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2018 Bushels Co-op Service</p>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

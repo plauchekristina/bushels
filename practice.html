@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+
+<head>
+    <title>Bushels Co-op Service</title>
+    <html lang="en">
+
+    </html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-mobile.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="images/bushels-logo_main.svg">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Order Form</a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span> My Account</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <body onload="orderQuantities()">
+
+        <!---  ####### Body content begins ####### -->
+
+
+        <!---Practice ######## -->
+        <div class="box">
+            <div>
+                <div class="card text-left">
+                    <div class="card-header green">
+                        <form action="model/orders-model.php" method="post">
+                            <input name="account_id" id="account_id" type="hidden" value="<?php echo $_SESSION['client']['account_id'];?>">
+                            <h2> Order Form</h2>
+                            <div class="overlay">
+                                <div>
+                                    <label># Full Bushels
+
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="full-count" id="full-count"
+                                        min="0" step="1">
+                                    <!-- Budget data from co-op info. Used for calculations, but hidden from viewer.-->
+                                    <input type="hidden" name="full-budget" id="full-budget" value="<?php echo $_SESSION['coop']['coop_full_budget'];?>">
+                                </div>
+                                <div>
+                                    <label># Half Bushels </label>
+                                </div>
+                                <div>
+                                    <input type="number" onfocus="targetInput(this)" required onfocusout="targetOutput(this)" name="half-count" id="half-count"
+                                        size="10" onchange="orderQuantities()" min="0" step="1">
+
+                                    <!-- Budget data from co-op info. Used for calculations, but hidden from viewer.-->
+                                    <input type="hidden" name="half-budget" id="half-budget" size="10" value="<?php echo $_SESSION['coop']['coop_half_budget'];?>">
+
+                                </div>
+                            </div>
+                            <h4>Purchasing Budget:
+                                <span id="target-total"></span>
+                            </h4>
+                            <h4>Amount Left to Spend:
+                                <span id="over-under"></span>
+                            </h4>
+                    </div>
+                    <div class="card-body">
+
+                        <h3>
+                            <?php echo $_SESSION['coop']['coop_name'];?> Order</h3>
+                        <div>
+                            <label>Date:
+                                <span class="alert">*</span>
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" name="order-date" required id="order-date" value="<?php echo date(" m/d/Y ");?>">
+                        </div>
+
+                        <!-- Items section -->
+                        <h4 class="brown">Item</h4>
+                        <div>
+                            <label>Per Full Bushel:
+
+                            </label>
+                        </div>
+                        <div>
+                            <input type="number" required name="per-full" id="per-full" onchange="orderQuantities()">
+                        </div>
+
+                        <div>
+                            <label>Per Half Bushel:
+
+                            </label>
+                        </div>
+                        <div>
+                            <input type="number" required name="per-half" id="per-half" onchange="orderQuantities()">
+                        </div>
+                        <div>
+                            <label>Item Name:
+                            </label>
+                        </div>
+
+                        <div>
+                            <select required name="item-name" id="item-name">
+
+                                <option value="Apples">Apples</option>
+                                <option value="Bananas">Bananas</option>
+                                <option value="Potatoes">Potatoes</option>
+                                <option value="Onions">Onions</option>
+                                <option value="Tomatoes">Tomatoes</option>
+                                <option value="Lettuce">Lettuce</option>
+                                <option value="Cucumber">Cucumber</option>
+                                <option value="Carrots">Carrots</option>
+                                <option value="Pears">Pears</option>
+                                <option value="Tangerines">Tangerines</option>
+                                <option value="Plums">Plums</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label># In Box:
+
+                            </label>
+                        </div>
+                        <div>
+                            <input type="number" required name="item-count" id="item-count" onchange="orderQuantities()">
+                        </div>
+
+                        <div>
+                            <input type="hidden" required name="item-unit" id="item-unit" value="count">
+                        </div>
+                        <div>
+                            <label>Box Price:
+
+                            </label>
+                        </div>
+                        <div>
+                            <input type="number" name="item-price" required id="item-price" placeholder="$0.00" onchange="orderQuantities()">
+                        </div>
+                        <hr/>
+                        <div>
+                            <label>#Boxes to Order:</label>
+                        </div>
+                        <div>
+                            <p id=item-quantity-display></p>
+                            <input type="hidden" name="item-quantity" id="item-quantity" readonly>
+                        </div>
+                        <div>
+                            <label>Item Total:</label>
+                        </div>
+                        <div>
+                            $
+                            <input type="number" name="item-total" id="item-total" readonly>
+                        </div>
+                        <hr/>
+                        <div class="card-footer">
+                            <div>
+                                <label>Order Total:</label>
+                            </div>
+                            <div>
+                                <input type="number" readonly step=".01" name="grand-total" id="grand-total">
+                            </div>
+                        </div>
+
+                        <p>Place your order through your sales person at the Farmers Market. Make sure to call them.
+                        </p>
+                        <div>
+
+                            <input type="submit" name="submit" id="regbtn" value="Submit" class="btn btn-primary">
+                            </form>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end practice ####### -->
+
+        <p> Hi!</p>
+        <div id="testa"></div>
+        <p id="testb"></p>
+        <script> 
+            var display = "27";
+            document.getElementById('testa').innerHTML = display;
+            document.getElementById('testb').innerHTML = display;</script>
+
+
+
+        <!--footer begins-->
+
+        <script src="../bushels-project/scripts/order-quantities.js"></script>
+        <footer class="footer">
+            <div class="container text-center">
+                <p>&copy; 2018 Bushels Co-op Service</p>
+            </div>
+        </footer>
+
+    </body>
+
+
+    </html>
